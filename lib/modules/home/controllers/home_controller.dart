@@ -10,9 +10,6 @@ import 'package:threadofon/core/utils/app_log.dart';
 import 'package:threadofon/modules/home/widgets/thread/thread_widget.dart';
 
 
-
-enum DBCopyStatus { initial, load, success, error }
-
 class HomeController extends GetxController {
   var selectTab = 0.obs;
 

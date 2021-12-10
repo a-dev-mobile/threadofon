@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:threadofon/modules/home/widgets/thread/widgets/m_thread/page_view/2_m_diam/m_diam_widget.dart';
+
+import 'page_view/1_m_type/m_type_widget.dart';
 
 class MThreadWidget extends StatelessWidget {
   const MThreadWidget({Key? key}) : super(key: key);
@@ -6,12 +9,17 @@ class MThreadWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController();
+
+    controller.jumpToPage(1);
     return Scaffold(
         body: PageView(
       controller: controller,
-      children: [
-        const MTypeWidget(),
-        const MDiamWidget(),
+      children: const [
+        MTypeWidget(),
+        MDiamWidget(),
+        MTypeWidget(),
+        MTypeWidget(),
+        // const MDiamWidget(),
       ],
     ));
   }
