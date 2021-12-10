@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
-import 'package:threadofon/modules/home/home_controller.dart';
 import 'package:threadofon/modules/home/widgets/thread/thread_widget.dart';
 import '../../../core/constants/colors.dart';
+import 'controllers/home_controller.dart';
 import 'widgets/setting/view/setting_view.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -30,7 +30,7 @@ class HomePage extends GetView<HomeController> {
 
     return Obx(() => Scaffold(
           body: IndexedStack(
-            index: controller.selectItem.value,
+            index: controller.selectTab.value,
             children: _tabs,
           ),
           bottomNavigationBar: Container(
@@ -41,7 +41,7 @@ class HomePage extends GetView<HomeController> {
             child: BottomNavigationBar(
               elevation: 0,
               unselectedItemColor: ColorConstants.neutral_grey_400,
-              currentIndex: controller.selectItem.value,
+              currentIndex: controller.selectTab.value,
               selectedItemColor: isDarkMode
                   ? ColorConstants.primary_301
                   : ColorConstants.primary_500,

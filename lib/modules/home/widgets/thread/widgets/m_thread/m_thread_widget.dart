@@ -6,26 +6,17 @@ class MThreadWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController();
-    return Scaffold();
+    return Scaffold(
+        body: PageView(
+      controller: controller,
+      children: [
+        const MTypeWidget(),
+        const MDiamWidget(),
+      ],
+    ));
   }
 }
-//     return PageView(
-//       controller: controller,
-//       // children: [
-//       //   BlocProvider(
-//       //     create: (context) => MTypeCubit(),
-//       //     child: const MTypeWidget(),
-//       //   ),
-//       //   BlocProvider(
-//       //     create: (context) => MDiamBloc()..add(MDiamFetched()),
-//       //     child: const MDiamWidget(),
-//         ),
-//       ],
-//     );
-//   }
-// }
 
-// /*
 
 // query nom diam
 //  select n.[Range_1] as nomDiam  from  [isoNormal]n

@@ -1,5 +1,6 @@
 class ConstStorage {
 
+  static const String keyIsDBCopyStatus = 'keyIsDBCopyStatus';
   static const String keyIsDark = 'keyIsDark';
   static const String keyLocale = 'keyLocale';
   static const String keyPathDB = 'keyPathDB';

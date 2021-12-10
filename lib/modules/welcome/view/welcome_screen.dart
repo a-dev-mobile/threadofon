@@ -39,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
               text: 'запуск',
               onClick: () {
                 // Navigator.of(context).pushReplacementNamed(Routes.home);
-                Get.offAllNamed(Routes.HOME);
+                Get.offAllNamed(Routes.COPY_DB);
 
                 // context.read<NavigatorCubit>().showHome(blocDbCopy);
               })

@@ -31,30 +31,5 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/* 
+ 
 
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(),
-      home: const MyApp(),
-      onGenerateTitle: (BuildContext context) =>
-      AppLocalizations.of(context)!.app_name,
-      localizationsDelegates:
-      AppLocalizations.localizationsDelegates,
-      debugShowCheckedModeBanner: false,
-      locale: Locale(langCode),
-      supportedLocales: AppLocalizations.supportedLocales,
-      themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
-      initialRoute: Routes.splash,
-    );
-  }
-}
-
-
- */
