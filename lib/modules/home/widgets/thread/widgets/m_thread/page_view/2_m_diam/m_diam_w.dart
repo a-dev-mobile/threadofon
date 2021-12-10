@@ -4,8 +4,8 @@
 // import 'package:threadofon/core/constants/enums.dart';
 // import 'package:threadofon/core/utils/app_log.dart';
 
-// import 'package:threadofon/presentation/error/error_screen.dart';
-// import 'package:threadofon/presentation/home/view/thread/view/m_thread/models/m_diam.dart';
+// import 'package:threadofon/modules/error/error_screen.dart';
+// import 'package:threadofon/modules/home/view/thread/view/m_thread/models/m_diam.dart';
 
 // import 'bloc/m_diam_bloc.dart';
 

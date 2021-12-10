@@ -1,28 +1,24 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/material.dart';
 
-// import 'page_view/1_m_type/cubit/m_type_cubit.dart';
-// import 'page_view/1_m_type/m_type_w.dart';
-// import 'page_view/2_m_diam/bloc/m_diam_bloc.dart';
-// import 'page_view/2_m_diam/m_diam_w.dart';
+class MThreadWidget extends StatelessWidget {
+  const MThreadWidget({Key? key}) : super(key: key);
 
-
-// class MView extends StatelessWidget {
-//   const MView({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final PageController controller = PageController();
+  @override
+  Widget build(BuildContext context) {
+    final PageController controller = PageController();
+    return Scaffold();
+  }
+}
 //     return PageView(
 //       controller: controller,
-//       children: [
-//         BlocProvider(
-//           create: (context) => MTypeCubit(),
-//           child: const MTypeWidget(),
-//         ),
-//         BlocProvider(
-//           create: (context) => MDiamBloc()..add(MDiamFetched()),
-//           child: const MDiamWidget(),
+//       // children: [
+//       //   BlocProvider(
+//       //     create: (context) => MTypeCubit(),
+//       //     child: const MTypeWidget(),
+//       //   ),
+//       //   BlocProvider(
+//       //     create: (context) => MDiamBloc()..add(MDiamFetched()),
+//       //     child: const MDiamWidget(),
 //         ),
 //       ],
 //     );

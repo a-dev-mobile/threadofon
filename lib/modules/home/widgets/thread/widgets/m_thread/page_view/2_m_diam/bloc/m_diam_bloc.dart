@@ -10,7 +10,7 @@
 // import 'package:threadofon/core/utils/app_storage.dart';
 // import 'package:threadofon/core/utils/app_utils.dart';
 
-// import 'package:threadofon/presentation/home/view/thread/view/m_thread/models/m_diam.dart';
+// import 'package:threadofon/modules/home/view/thread/view/m_thread/models/m_diam.dart';
 
 // part 'm_diam_event.dart';
 // part 'm_diam_state.dart';

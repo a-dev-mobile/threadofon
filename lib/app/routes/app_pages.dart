@@ -1,7 +1,9 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
-import 'package:threadofon/presentation/home/home_screen.dart';
-import 'package:threadofon/presentation/home/view/setting/view/setting_view.dart';
-import 'package:threadofon/presentation/welcome/view/welcome_screen.dart';
+import 'package:threadofon/modules/home/home_binding.dart';
+import 'package:threadofon/modules/home/home_page.dart';
+import 'package:threadofon/modules/welcome/view/welcome_screen.dart';
 
 part 'app_routes.dart';
 
@@ -12,19 +14,11 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      preventDuplicates: true,
+  
       name: _Paths.HOME,
-      page: () => const HomeScreen(),
-      bindings: const [
-        // HomeBinding(),
-      ],
-      title: null,
-      children: [
-        GetPage(
-          name: _Paths.SETTINGS,
-          page: () => const SettingView(),
-          // binding: SettingsBinding(),
-        ),
+      page: () => const HomePage(),
+      bindings: [
+        HomeBinding(),
       ],
     ),
     GetPage(

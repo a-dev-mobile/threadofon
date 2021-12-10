@@ -1,7 +1,9 @@
 class ConstStorage {
 
-  static const String keyIsDark = 'isDark';
-  static const String keyLocale = 'locale';
-  static const String keyPathDB = 'patchDB';
+  static const String keyIsDark = 'keyIsDark';
+  static const String keyLocale = 'keyLocale';
+  static const String keyPathDB = 'keyPathDB';
+  static const String keyIndexLastItemHome = 'keyIndexLastHome';
+  static const String keyIndexLastItemThread = 'keyIndexLastItemThread';
 
 }

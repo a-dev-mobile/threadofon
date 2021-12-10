@@ -3,13 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:threadofon/app/routes/app_pages.dart';
 import 'package:threadofon/core/constants/common.dart';
-import 'package:threadofon/presentation/error/error_screen.dart';
 
-import 'package:threadofon/presentation/home/home_screen.dart';
-import 'package:threadofon/presentation/home/home_screen.dart';
-import 'package:threadofon/presentation/loading/loading_screen.dart';
-import 'package:threadofon/presentation/splash/splash_screen.dart';
-import 'package:threadofon/presentation/welcome/view/welcome_screen.dart';
 import 'package:threadofon/services/app_services.dart';
 
 import '../config/theme/app_theme.dart';

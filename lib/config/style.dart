@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 import '../core/constants/colors.dart';
-import '../core/constants/common.dart';
 
 abstract class AppTextStyle {
   // static final BuildContext _context = AppGlobal.getContext();
