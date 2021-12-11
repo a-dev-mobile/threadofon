@@ -10,7 +10,7 @@ class MThreadWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final PageController controller = PageController();
 
-    controller.jumpToPage(1);
+    // controller.jumpToPage(1);
     return Scaffold(
         body: PageView(
       controller: controller,

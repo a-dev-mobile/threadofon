@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:threadofon/config/style.dart';
+import 'package:threadofon/config/app_text_style.dart';
 import 'package:threadofon/core/utils/app_log.dart';
 
 import 'package:threadofon/modules/home/widgets/thread/widgets/m_thread/page_view/2_m_diam/m_diam_controller.dart';

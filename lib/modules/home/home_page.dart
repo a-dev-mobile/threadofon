@@ -37,14 +37,14 @@ class HomePage extends GetView<HomeController> {
             decoration: const BoxDecoration(
                 border: Border(
                     top: BorderSide(
-                        color: ColorConstants.neutral_grey_400, width: 0.5))),
+                        color: ConstColor.neutral_grey_400, width: 0.5))),
             child: BottomNavigationBar(
               elevation: 0,
-              unselectedItemColor: ColorConstants.neutral_grey_400,
+              unselectedItemColor: ConstColor.neutral_grey_400,
               currentIndex: controller.selectTab.value,
               selectedItemColor: isDarkMode
-                  ? ColorConstants.primary_301
-                  : ColorConstants.primary_500,
+                  ? ConstColor.primary_301
+                  : ConstColor.primary_500,
               onTap: (index) {
                 controller.setSelectItem(index: index);
               },

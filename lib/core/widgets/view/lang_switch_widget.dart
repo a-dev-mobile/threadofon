@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:threadofon/services/app_services.dart';
 
-import '../../../config/style.dart';
+import '../../../config/app_text_style.dart';
 import '../../constants/colors.dart';
 import '../button/btn_list_tile.dart';
 
@@ -28,11 +28,11 @@ class LangSwitchWidget extends StatelessWidget {
       context: context,
       builder: (BuildContext context) => SimpleDialog(
         backgroundColor: Theme.of(context).brightness == Brightness.dark
-            ? ColorConstants.neutral_grey_800
-            : ColorConstants.neutral_white,
+            ? ConstColor.neutral_grey_800
+            : ConstColor.neutral_white,
         title: Text(
           AppLocalizations.of(context)!.app_lang,
-          style: AppTextStyle.H3(),
+          style: AppTextStyle.H3_BOLD(),
         ),
         children: [
           SimpleDialogOption(

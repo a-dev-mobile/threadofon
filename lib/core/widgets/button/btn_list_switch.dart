@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 import '../../constants/colors.dart';
-import '../../../config/style.dart';
+import '../../../config/app_text_style.dart';
 
 
 class BtnListSwitch extends StatelessWidget {
@@ -22,12 +22,12 @@ class BtnListSwitch extends StatelessWidget {
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return SwitchListTile(
       inactiveThumbColor:
-      isDarkMode ? ColorConstants.neutral_grey_800 : ColorConstants.neutral_white,
+      isDarkMode ? ConstColor.neutral_grey_800 : ConstColor.neutral_white,
       activeColor:
-      isDarkMode ? ColorConstants.neutral_grey_800 : ColorConstants.neutral_white,
+      isDarkMode ? ConstColor.neutral_grey_800 : ConstColor.neutral_white,
 
       activeTrackColor:
-      isDarkMode ? ColorConstants.primary_301 : ColorConstants.primary_500,
+      isDarkMode ? ConstColor.primary_301 : ConstColor.primary_500,
       // inactiveTrackColor: Colors.yellow,
       title: Text(text,style: AppTextStyle.BODY_SEMI_BOLD(),),
       onChanged: onChanged,

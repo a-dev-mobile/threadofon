@@ -15,16 +15,16 @@ class BtnLargeSecondary extends StatelessWidget {
         fontSize: 15,
         letterSpacing: 1.25,
         color: isDarkMode
-            ? ColorConstants.neutral_grey_200
-            : ColorConstants.neutral_grey_800);
+            ? ConstColor.neutral_grey_200
+            : ConstColor.neutral_grey_800);
     ButtonStyle? buttonStyle = ElevatedButton.styleFrom(
         primary: Theme.of(context).scaffoldBackgroundColor,
         shape: const StadiumBorder(),
         side: BorderSide(
             width: 0.5,
             color: isDarkMode
-                ? ColorConstants.neutral_grey_400
-                : ColorConstants.neutral_grey_800));
+                ? ConstColor.neutral_grey_400
+                : ConstColor.neutral_grey_800));
 
     return Padding(
       padding: const EdgeInsets.all(8.0),

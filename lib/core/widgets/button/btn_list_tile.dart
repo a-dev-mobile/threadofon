@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 
-import '../../../config/style.dart';
+import '../../../config/app_text_style.dart';
 
 class BtnListTile extends StatelessWidget {
   const BtnListTile(

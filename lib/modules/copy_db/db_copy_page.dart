@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:threadofon/app/routes/app_pages.dart';
-import 'package:threadofon/config/style.dart';
+import 'package:threadofon/config/app_text_style.dart';
 import 'db_copy_controller.dart';
 
 class DbCopyPage extends GetView<DBCopyController> {

@@ -1,6 +1,6 @@
 
 {
-    "app_name": "Thread",
+    "app_name": "ThreadFon", 
     "main": "Home",
     "search": "Search",
     "favorite": "Favorites",
@@ -9,8 +9,13 @@
     "lang_ru": "Russian",
     "lang_en": "English",
     "dark_theme": "Dark theme",
-    "generalError": "Oops, something went wrong!\nTry again"
-  
+    "generalError": "Oops, something went wrong!\nTry again",
+    "launch": "Launch",
+
+   "msg_welcome_helper_thread": "Ваш помошник в мире резьб",
+   "msg_welcome_setting_first_launch": "First Run Settings",
+   "nuts": "Nuts",
+   "bolt": "Bolt"
     
   }
   

@@ -9,9 +9,17 @@ import '../core/constants/colors.dart';
 abstract class AppTextStyle {
   // static final BuildContext _context = AppGlobal.getContext();
 
-  static TextStyle H3([Color? colorText]) {
+  static TextStyle H3_BOLD([Color? colorText]) {
     return TextStyle(
         fontWeight: FontWeight.bold,
+        fontSize: 20.sp,
+        color: colorText,
+        letterSpacing: 0.15);
+  }
+  
+  static TextStyle H3_REGULAR([Color? colorText]) {
+    return TextStyle(
+        fontWeight: FontWeight.normal,
         fontSize: 20.sp,
         color: colorText,
         letterSpacing: 0.15);
@@ -42,7 +50,10 @@ abstract class AppTextStyle {
     return TextStyle(
         fontWeight: FontWeight.normal, fontSize: 12.sp, color: colorText);
   }
-
+  static TextStyle LABEL_SEMI_BOLD([Color? textColor]) {
+    return TextStyle(
+        fontWeight: FontWeight.w600, fontSize: 12.sp, color: textColor);
+  }
   static TextStyle BUTTON() {
     return TextStyle(
       fontWeight: FontWeight.bold,
@@ -63,6 +74,6 @@ abstract class AppTextStyle {
     return TextStyle(
         fontWeight: FontWeight.normal,
         fontSize: 16.sp,
-        color: ColorConstants.neutral_grey_800);
+        color: ConstColor.neutral_grey_800);
   }
 }

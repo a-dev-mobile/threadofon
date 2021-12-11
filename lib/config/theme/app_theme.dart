@@ -16,15 +16,15 @@ class AppTheme {
         // color for overlay scroll
         colorScheme: ColorScheme.fromSwatch(
             primarySwatch: const MaterialColor(primaryLight, mapSwatchLight)),
-        primaryColor: ColorConstants.primary_500,
-        scaffoldBackgroundColor: ColorConstants.neutral_white,
+        primaryColor: ConstColor.primary_500,
+        scaffoldBackgroundColor: ConstColor.neutral_white,
         textTheme: _getTextTheme(context: context, isDark: false),
-        canvasColor: ColorConstants.neutral_white,
+        canvasColor: ConstColor.neutral_white,
         iconTheme: iconTheme());
   }
 
   static IconThemeData iconTheme() =>
-      const IconThemeData(color: ColorConstants.neutral_grey_400);
+      const IconThemeData(color: ConstColor.neutral_grey_400);
 
   static ThemeData darkThemeData(BuildContext context) {
     return ThemeData.dark().copyWith(
@@ -33,20 +33,21 @@ class AppTheme {
         brightness: Brightness.dark,
         colorScheme: ColorScheme.fromSwatch(
             primarySwatch: const MaterialColor(primaryDark, mapSwatchDark)),
-        primaryColor: ColorConstants.primary_301,
-        scaffoldBackgroundColor: ColorConstants.neutral_grey_900,
+        primaryColor: ConstColor.primary_301,
+        
+        scaffoldBackgroundColor: ConstColor.neutral_grey_900,
         textTheme: _getTextTheme(context: context, isDark: true),
-        canvasColor: ColorConstants.neutral_grey_900,
+        canvasColor: ConstColor.neutral_grey_900,
         iconTheme: iconTheme());
   }
 
   static AppBarTheme _getAppBarTheme(
       {required BuildContext context, required bool isDark}) {
     Color backgroundColor =
-        isDark ? ColorConstants.neutral_grey_900 : ColorConstants.neutral_white;
+        isDark ? ConstColor.neutral_grey_900 : ConstColor.neutral_white;
     Color foregroundColor = isDark
-        ? ColorConstants.neutral_grey_200
-        : ColorConstants.neutral_grey_800;
+        ? ConstColor.neutral_grey_200
+        : ConstColor.neutral_grey_800;
 
     AppBarTheme appBarTheme = AppBarTheme(
         backgroundColor: backgroundColor,
@@ -68,8 +69,8 @@ class AppTheme {
   static TextTheme _getTextTheme(
       {required BuildContext context, required bool isDark}) {
     Color bodyColor = isDark
-        ? ColorConstants.neutral_grey_200
-        : ColorConstants.neutral_grey_800;
+        ? ConstColor.neutral_grey_200
+        : ConstColor.neutral_grey_800;
 
     var textTheme = Theme.of(context)
         .textTheme

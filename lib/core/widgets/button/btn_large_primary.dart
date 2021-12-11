@@ -17,13 +17,13 @@ class BtnLargePrimary extends StatelessWidget {
         fontSize: 15,
         letterSpacing: 1.25,
         color: isDarkMode
-            ? ColorConstants.neutral_grey_800
-            : ColorConstants.neutral_white);
+            ? ConstColor.neutral_grey_800
+            : ConstColor.neutral_white);
     ButtonStyle? buttonStyle = ElevatedButton.styleFrom(
         primary: Theme.of(context).primaryColor,
         shape: const StadiumBorder(),
         side: const BorderSide(
-            width: 0.5, color: ColorConstants.neutral_grey_800));
+            width: 0.5, color: ConstColor.neutral_grey_400));
 
     return Padding(
       padding: const EdgeInsets.all(8.0),

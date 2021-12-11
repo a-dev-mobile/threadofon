@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:threadofon/modules/home/widgets/thread/thread_controller.dart';
 
-import '../../../../config/style.dart';
+import '../../../../config/app_text_style.dart';
 import '../../../../core/constants/colors.dart';
 import 'data/thread_tab_data.dart';
 
@@ -26,7 +26,7 @@ class ThreadView extends GetView<ThreadController> {
                 children: [
                   Text(
                     threadTabData[controller.selectItem.value].title,
-                    style: AppTextStyle.H3(),
+                    style: AppTextStyle.H3_BOLD(),
                   ),
                   Text(
                     threadTabData[controller.selectItem.value].gost,
@@ -39,13 +39,13 @@ class ThreadView extends GetView<ThreadController> {
               controller.setLastItem(index: index);
             },
             indicatorColor: isDark
-                ? ColorConstants.neutral_grey_200
-                : ColorConstants.neutral_grey_800,
+                ? ConstColor.neutral_grey_200
+                : ConstColor.neutral_grey_800,
             labelStyle: AppTextStyle.BODY_SEMI_BOLD(),
             indicatorWeight: 3,
             labelColor: isDark
-                ? ColorConstants.neutral_grey_200
-                : ColorConstants.neutral_grey_800,
+                ? ConstColor.neutral_grey_200
+                : ConstColor.neutral_grey_800,
             tabs: threadTabData.map((e) => Tab(text: e.abrv)).toList(),
           ),
         ),
