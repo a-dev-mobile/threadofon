@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:file_copy/file_copy.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:threadofon/core/constants/common.dart';
@@ -23,10 +24,9 @@ class AppServices extends GetxService {
   void setLocaleRU() {
     String locale = ConstLocale.ruCode;
     langCode = locale;
-     _updateLocale();
+    _updateLocale();
     GetStorage().write(ConstStorage.keyLocale, locale);
   }
-
 
   void toggleTheme({required bool isDark}) {
     this.isDark.value = isDark;
@@ -37,7 +37,12 @@ class AppServices extends GetxService {
     isDark.value = GetStorage().read(ConstStorage.keyIsDark) ?? ConstDef.isDark;
     langCode =
         GetStorage().read(ConstStorage.keyLocale) ?? ConstDef.defCodeLocale;
-
+    FileCopy fileCopy = FileCopy();
+    fileCopy.fileCopyToMobileLocal(
+      pathFrom: pathFrom,
+      pathTo: pathTo,
+      nameFile: nameFile,
+    );
     return this;
   }
 }

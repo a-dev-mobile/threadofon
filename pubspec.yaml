@@ -27,6 +27,9 @@ dependencies:
   flutter_screenutil: ^5.0.1
   shared_preferences: ^2.0.10
   enum_to_string: ^2.0.1
+  
+  file_copy:
+    path: package/file_copy
 
 dev_dependencies:
   flutter_test:

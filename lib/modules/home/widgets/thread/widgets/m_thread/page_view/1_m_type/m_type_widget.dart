@@ -18,10 +18,7 @@ class MTypeWidget extends GetView<MTypeController> {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        Expanded(
-            child: SegmentControlsWidget(
-          pathSvg: ConstAssets.svgBolt, onTap: () {  }, text: 
-        )),
+       
         // Expanded(
         //   child: SegmentControlsWidget(
         //     pathSvg: ConstAssets.svgNuts,

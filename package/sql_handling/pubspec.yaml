@@ -1,0 +1,19 @@
+name: sql_handling
+description: Copy a file to your phone.
+version: 0.0.1
+publish_to: none 
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+
+
+dependencies: 
+  flutter:
+    sdk: flutter
+  logger: ^1.1.0
+  # path_provider: ^2.0.8
+  # sqflite: ^2.0.1
+
+
+# dev_dependencies: 
+#   test: ^1.19.5
