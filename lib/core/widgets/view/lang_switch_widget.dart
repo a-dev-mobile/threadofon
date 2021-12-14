@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
-import 'package:threadofon/services/app_services.dart';
+import 'package:threadofon/services/app_setting_services.dart';
 
 import '../../../config/app_text_style.dart';
 import '../../constants/colors.dart';
@@ -37,7 +37,7 @@ class LangSwitchWidget extends StatelessWidget {
         children: [
           SimpleDialogOption(
             onPressed: () {
-              AppServices.to.setLocaleRU();
+              AppSettingServices.to.setLocaleRU();
               // Navigator.pop(context);
               Get.back();
             },
@@ -48,7 +48,7 @@ class LangSwitchWidget extends StatelessWidget {
           ),
           SimpleDialogOption(
             onPressed: () {
-              AppServices.to.setLocaleEN();
+              AppSettingServices.to.setLocaleEN();
                Get.back();
               // Navigator.pop(context);
             },

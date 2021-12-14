@@ -3,14 +3,16 @@ import 'dart:ui';
 import 'package:file_copy/file_copy.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:threadofon/core/constants/common.dart';
 import 'package:threadofon/core/constants/storage.dart';
 
-class AppServices extends GetxService {
-  static AppServices get to => Get.find();
+class AppSettingServices extends GetxService {
+  static AppSettingServices get to => Get.find();
 
   var isDark = true.obs;
   var langCode = ConstDef.defCodeLocale;
+  String patchDb = '';
 
   void setLocaleEN() {
     String locale = ConstLocale.enCode;
@@ -33,16 +35,12 @@ class AppServices extends GetxService {
     GetStorage().write(ConstStorage.keyIsDark, isDark);
   }
 
-  Future<AppServices> init() async {
+  Future<AppSettingServices> init() async {
     isDark.value = GetStorage().read(ConstStorage.keyIsDark) ?? ConstDef.isDark;
     langCode =
         GetStorage().read(ConstStorage.keyLocale) ?? ConstDef.defCodeLocale;
-    FileCopy fileCopy = FileCopy();
-    fileCopy.fileCopyToMobileLocal(
-      pathFrom: pathFrom,
-      pathTo: pathTo,
-      nameFile: nameFile,
-    );
+
     return this;
   }
+
 }

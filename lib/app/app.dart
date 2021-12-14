@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:threadofon/app/routes/app_pages.dart';
 import 'package:threadofon/core/constants/common.dart';
 
-import 'package:threadofon/services/app_services.dart';
+import 'package:threadofon/services/app_setting_services.dart';
 
 import '../config/theme/app_theme.dart';
 
@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
               AppLocalizations.of(context)!.app_name,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           debugShowCheckedModeBanner: false,
-          locale: Locale(AppServices.to.langCode),
+          locale: Locale(AppSettingServices.to.langCode),
           supportedLocales: AppLocalizations.supportedLocales,
           themeMode:
-              AppServices.to.isDark.value ? ThemeMode.dark : ThemeMode.light,
+              AppSettingServices.to.isDark.value ? ThemeMode.dark : ThemeMode.light,
           initialRoute: AppPages.INITIAL,
           getPages: AppPages.routes,
           fallbackLocale: const Locale(ConstDef.defCodeLocale),
