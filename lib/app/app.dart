@@ -8,8 +8,8 @@ import 'package:threadofon/services/app_setting_services.dart';
 
 import '../config/theme/app_theme.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,9 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           locale: Locale(AppSettingServices.to.langCode),
           supportedLocales: AppLocalizations.supportedLocales,
-          themeMode:
-              AppSettingServices.to.isDark.value ? ThemeMode.dark : ThemeMode.light,
+          themeMode: AppSettingServices.to.isDark.value
+              ? ThemeMode.dark
+              : ThemeMode.light,
           initialRoute: AppPages.INITIAL,
           getPages: AppPages.routes,
           fallbackLocale: const Locale(ConstDef.defCodeLocale),
@@ -30,6 +31,3 @@ class MyApp extends StatelessWidget {
         ));
   }
 }
-
- 
-
