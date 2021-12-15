@@ -1,27 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:threadofon/modules/home/view/thread/view/m_thread/m_thread_controller.dart';
 
 import 'view/1_m_type/m_type_widget.dart';
 import 'view/2_m_diam/m_diam_view.dart';
 
-
-class MThreadWidget extends StatelessWidget {
+class MThreadWidget extends GetView<MThreadController> {
   const MThreadWidget({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    final PageController controller = PageController();
-
-    // controller.jumpToPage(1);
-    return Scaffold(
-        body: PageView(
-      controller: controller,
-      children: const [
+  List<Widget> get screen => [
         MTypeWidget(),
         MDiamWidget(),
         MTypeWidget(),
         MTypeWidget(),
-        // const MDiamWidget(),
-      ],
+      ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: PageView.builder(
+      controller: controller.pageController,
+      onPageChanged: (page) {
+        controller.indexPage.value = page;
+      },
+      itemCount: screen.length,
+      itemBuilder: (context, index) {
+        return Obx(() => IndexedStack(
+              index: controller.indexPage.value,
+              children: screen,
+            ));
+      },
     ));
   }
 }

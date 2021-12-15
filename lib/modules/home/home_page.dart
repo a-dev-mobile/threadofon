@@ -16,7 +16,7 @@ class HomePage extends GetView<HomeController> {
         const ThreadView(),
         const SettingView(),
       ];
- 
+
   @override
   Widget build(BuildContext context) {
     var brightness = Theme.of(context).brightness;
@@ -42,10 +42,10 @@ class HomePage extends GetView<HomeController> {
               elevation: 0,
               unselectedItemColor: ConstColor.neutral_grey_400,
               currentIndex: controller.selectTab.value,
-              selectedItemColor: isDarkMode
-                  ? ConstColor.primary_301
-                  : ConstColor.primary_500,
+              selectedItemColor:
+                  isDarkMode ? ConstColor.primary_301 : ConstColor.primary_500,
               onTap: (index) {
+                controller.selectTab.value = index;
               },
               items: [
                 BottomNavigationBarItem(

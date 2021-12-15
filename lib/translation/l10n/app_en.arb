@@ -14,8 +14,13 @@
 
    "msg_welcome_helper_thread": "Ваш помошник в мире резьб",
    "msg_welcome_setting_first_launch": "First Run Settings",
+
    "nuts": "Nuts",
-   "bolt": "Bolt"
+   "bolt": "Bolt",
+   "lets_get_started": "Давайте начнем",
+   "select_type_thread": "Укажите тип резьбы",
+   "internal_thread": "внутренняя",
+   "external_thread": "внешняя"
     
   }
   

@@ -9,7 +9,8 @@ import 'package:threadofon/core/constants/colors.dart';
 import 'package:threadofon/core/constants/common.dart';
 import 'package:threadofon/core/utils/app_log.dart';
 import 'package:threadofon/core/widgets/button/btn_large_secondary.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:threadofon/modules/home/view/thread/view/m_thread/m_thread_controller.dart';
 import 'm_type_controller.dart';
 
 class MTypeWidget extends GetView<MTypeController> {
@@ -18,31 +19,46 @@ class MTypeWidget extends GetView<MTypeController> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-       
-        // Expanded(
-        //   child: SegmentControlsWidget(
-        //     pathSvg: ConstAssets.svgNuts,
-        //     isActive: true,
-        //   ),
-        // ),
-
-        // Obx(() {
-        //   return ChoiceChip(
-        //     label: const Text('NUTS'),
-        //     selected: controller.isNuts.value,
-        //     onSelected: (select) {
-        //       if (select) controller.setNutsActive();
-        //     },
-        //   );
-        // }),
+      children: [
+        Text(
+          AppLocalizations.of(context)!.lets_get_started,
+          style: AppTextStyle.H2(),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Text(
+            AppLocalizations.of(context)!.select_type_thread,
+            style: AppTextStyle.H3_REGULAR(),
+          ),
+        ),
+        Expanded(
+          child: Obx(() => ChoiceTypeThread(
+                isActive: !controller.isBolt.value,
+                onTap: () {
+                  controller.setNutsActive();
+                  MThreadController.to.pageToDiam();
+                },
+                pathSvg: ConstAssets.svgNuts,
+                text: AppLocalizations.of(context)!.internal_thread,
+              )),
+        ),
+        Expanded(
+          child: Obx(() => ChoiceTypeThread(
+                isActive: controller.isBolt.value,
+                onTap: () {
+                  controller.setBoltActive();
+                },
+                pathSvg: ConstAssets.svgBolt,
+                text: AppLocalizations.of(context)!.external_thread,
+              )),
+        ),
       ],
     );
   }
 }
 
-class SegmentControlsWidget extends StatelessWidget {
-  const SegmentControlsWidget({
+class ChoiceTypeThread extends StatelessWidget {
+  const ChoiceTypeThread({
     Key? key,
     this.isActive = false,
     required this.pathSvg,
@@ -57,7 +73,6 @@ class SegmentControlsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var brightness = Theme.of(context).brightness;
-
     bool isDarkMode = brightness == Brightness.dark;
     var scaffoldBackgroundColor = Theme.of(context).scaffoldBackgroundColor;
     var primaryColor = Theme.of(context).primaryColor;
@@ -67,33 +82,33 @@ class SegmentControlsWidget extends StatelessWidget {
             ? ConstColor.neutral_grey_800
             : ConstColor.neutral_white
         : Theme.of(context).textTheme.bodyText1!.color;
-    return Card(
-      elevation: 5,
-      margin: EdgeInsets.all(16.w),
-      color: isActive ? primaryColor : scaffoldBackgroundColor,
-      child: Padding(
-        padding: EdgeInsets.all(8.w),
-        child: InkWell(
-          onTap: () => onTap,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: SvgPicture.asset(pathSvg,
-                      fit: BoxFit.contain, color: colorText),
-                ),
-              ),
-              Text(
-                'NUTS',
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+        elevation: 10,
+        margin: EdgeInsets.all(16.w),
+        color: isActive ? primaryColor : scaffoldBackgroundColor,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SvgPicture.asset(
+              pathSvg,
+              fit: BoxFit.contain,
+              color: colorText,
+              height: 120.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                text.toUpperCase(),
                 textAlign: TextAlign.center,
                 style: AppTextStyle.LABEL_SEMI_BOLD(colorText),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

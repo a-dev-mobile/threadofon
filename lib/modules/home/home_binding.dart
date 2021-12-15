@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:threadofon/modules/home/view/thread/view/m_thread/m_thread_controller.dart';
 
 
 import 'controllers/home_controller.dart';
@@ -14,6 +15,7 @@ class HomeBinding implements Bindings {
 
     Get.lazyPut<HomeController>(() => HomeController());
     Get.lazyPut<ThreadController>(() => ThreadController());
+    Get.lazyPut<MThreadController>(() => MThreadController());
     Get.lazyPut<MTypeController>(() => MTypeController());
     Get.lazyPut<MDiamController>(() => MDiamController());
   }

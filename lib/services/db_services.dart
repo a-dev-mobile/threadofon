@@ -13,7 +13,6 @@ class DbServices extends GetxService {
   String patchDb = '';
 
   Future<DbServices> init() async {
-   
     patchDb = GetStorage().read(ConstStorage.keyPathDB) ?? "";
     if (patchDb.isEmpty) {
       await _copyDB();
@@ -33,6 +32,6 @@ class DbServices extends GetxService {
       pathTo: patchTo,
       nameFile: nameFile,
     );
-    GetStorage().write(ConstStorage.keyPathDB, patchTo + nameFile);
+    GetStorage().write(ConstStorage.keyPathDB, patchTo + '/' + nameFile);
   }
 }
