@@ -13,7 +13,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-MDiams _$MDiamsFromJson(Map<String, dynamic> json) {
+MDiamModel _$MDiamsFromJson(Map<String, dynamic> json) {
   return _MDiams.fromJson(json);
 }
 
@@ -28,8 +28,8 @@ class _$MDiamsTearOff {
     );
   }
 
-  MDiams fromJson(Map<String, Object?> json) {
-    return MDiams.fromJson(json);
+  MDiamModel fromJson(Map<String, Object?> json) {
+    return MDiamModel.fromJson(json);
   }
 }
 
@@ -43,12 +43,12 @@ mixin _$MDiams {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MDiamsCopyWith<MDiams> get copyWith => throw _privateConstructorUsedError;
+  $MDiamsCopyWith<MDiamModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MDiamsCopyWith<$Res> {
-  factory $MDiamsCopyWith(MDiams value, $Res Function(MDiams) then) =
+  factory $MDiamsCopyWith(MDiamModel value, $Res Function(MDiamModel) then) =
       _$MDiamsCopyWithImpl<$Res>;
   $Res call({String diam, bool isSelected});
 }
@@ -57,9 +57,9 @@ abstract class $MDiamsCopyWith<$Res> {
 class _$MDiamsCopyWithImpl<$Res> implements $MDiamsCopyWith<$Res> {
   _$MDiamsCopyWithImpl(this._value, this._then);
 
-  final MDiams _value;
+  final MDiamModel _value;
   // ignore: unused_field
-  final $Res Function(MDiams) _then;
+  final $Res Function(MDiamModel) _then;
 
   @override
   $Res call({
@@ -160,7 +160,7 @@ class _$_MDiams implements _MDiams {
   }
 }
 
-abstract class _MDiams implements MDiams {
+abstract class _MDiams implements MDiamModel {
   factory _MDiams({required String diam, bool isSelected}) = _$_MDiams;
 
   factory _MDiams.fromJson(Map<String, dynamic> json) = _$_MDiams.fromJson;

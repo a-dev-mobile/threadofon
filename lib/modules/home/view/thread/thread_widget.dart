@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:threadofon/modules/home/widgets/thread/thread_controller.dart';
 
 import '../../../../config/app_text_style.dart';
 import '../../../../core/constants/colors.dart';
 import 'data/thread_tab_data.dart';
+import 'thread_controller.dart';
 
 class ThreadView extends GetView<ThreadController> {
   const ThreadView({Key? key}) : super(key: key);

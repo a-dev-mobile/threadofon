@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:threadofon/modules/home/widgets/thread/widgets/m_thread/page_view/2_m_diam/m_diam_widget.dart';
 
-import 'page_view/1_m_type/m_type_widget.dart';
+import 'view/1_m_type/m_type_widget.dart';
+import 'view/2_m_diam/m_diam_view.dart';
+
 
 class MThreadWidget extends StatelessWidget {
   const MThreadWidget({Key? key}) : super(key: key);

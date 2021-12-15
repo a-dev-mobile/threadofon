@@ -30,6 +30,8 @@ dependencies:
 
   file_copy:
     path: package/file_copy
+  thredofon_repository:
+    path: package/thredofon_repository
 
 dev_dependencies:
   flutter_test:

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
-import 'package:threadofon/modules/home/widgets/thread/thread_widget.dart';
 import '../../../core/constants/colors.dart';
 import 'controllers/home_controller.dart';
-import 'widgets/setting/view/setting_view.dart';
+import 'view/setting/view/setting_view.dart';
+import 'view/thread/thread_widget.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
@@ -46,7 +46,6 @@ class HomePage extends GetView<HomeController> {
                   ? ConstColor.primary_301
                   : ConstColor.primary_500,
               onTap: (index) {
-                controller.setSelectItem(index: index);
               },
               items: [
                 BottomNavigationBarItem(

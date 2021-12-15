@@ -67,7 +67,11 @@ class WelcomeScreen extends StatelessWidget {
                   text: AppLocalizations.of(context)!.launch,
                   onClick: () {
                     // Navigator.of(context).pushReplacementNamed(Routes.home);
-                    Get.offAllNamed(Routes.COPY_DB);
+
+
+
+
+                    Get.offAllNamed(Routes.HOME);
 
                     // context.read<NavigatorCubit>().showHome(blocDbCopy);
                   }),

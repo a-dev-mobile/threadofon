@@ -1,6 +1,7 @@
 
-import 'package:threadofon/modules/home/widgets/thread/models/thread_tab_model.dart';
-import 'package:threadofon/modules/home/widgets/thread/widgets/m_thread/m_thread_widget.dart';
+
+import 'package:threadofon/modules/home/view/thread/models/thread_tab_model.dart';
+import 'package:threadofon/modules/home/view/thread/view/m_thread/m_thread_widget.dart';
 
 const List<ThreadTabModel> threadTabData = [
   ThreadTabModel(

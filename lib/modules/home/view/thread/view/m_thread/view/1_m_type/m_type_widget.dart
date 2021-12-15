@@ -9,7 +9,8 @@ import 'package:threadofon/core/constants/colors.dart';
 import 'package:threadofon/core/constants/common.dart';
 import 'package:threadofon/core/utils/app_log.dart';
 import 'package:threadofon/core/widgets/button/btn_large_secondary.dart';
-import 'package:threadofon/modules/home/widgets/thread/widgets/m_thread/page_view/1_m_type/m_type_controller.dart';
+
+import 'm_type_controller.dart';
 
 class MTypeWidget extends GetView<MTypeController> {
   const MTypeWidget({Key? key}) : super(key: key);
