@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+
 import 'package:get/get.dart';
+import 'package:threadofon/lang/translation_helper.dart';
 import 'package:threadofon/services/app_setting_services.dart';
 import '../button/btn_list_switch.dart';
 
@@ -20,7 +21,7 @@ class ThemeSwitchWidget extends StatelessWidget {
           },
           value: AppSettingServices.to.isDark.value,
           leading: const Icon(Icons.brightness_6),
-          text: AppLocalizations.of(context)!.dark_theme,
+          text: TranslateHelper.dark_theme,
         );
       },
     );

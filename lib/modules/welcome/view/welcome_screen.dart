@@ -7,12 +7,10 @@ import 'package:threadofon/config/app_text_style.dart';
 import 'package:threadofon/core/constants/colors.dart';
 import 'package:threadofon/core/constants/common.dart';
 import 'package:threadofon/core/widgets/button/btn_large_primary.dart';
+import 'package:threadofon/core/widgets/view/theme_switch.dart';
+import 'package:threadofon/lang/translation_helper.dart';
 import 'package:threadofon/main.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../../../app/app.dart';
 
-import '../../../core/widgets/view/lang_switch_widget.dart';
-import '../../../core/widgets/view/theme_switch.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -31,7 +29,7 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              AppLocalizations.of(context)!.msg_welcome_setting_first_launch,
+              TranslateHelper.msg_welcome_setting_first_launch,
               style: AppTextStyle.H2(),
               textAlign: TextAlign.center,
             ),
@@ -44,7 +42,6 @@ class WelcomeScreen extends StatelessWidget {
                       children: [
                         SvgPicture.asset(
                           ConstAssets.svgNuts,
-                          
                           color: Theme.of(context).textTheme.bodyText1?.color,
                         ),
                         SvgPicture.asset(
@@ -60,16 +57,13 @@ class WelcomeScreen extends StatelessWidget {
             ),
             Spacer(),
             const ThemeSwitchWidget(),
-            const LangSwitchWidget(),
+            
             SizedBox(
               width: 0.8.sw,
               child: BtnLargePrimary(
-                  text: AppLocalizations.of(context)!.launch,
+                  text: TranslateHelper.launch,
                   onClick: () {
                     // Navigator.of(context).pushReplacementNamed(Routes.home);
-
-
-
 
                     Get.offAllNamed(Routes.HOME);
 
@@ -93,7 +87,7 @@ class WelcomeAppTitle extends StatelessWidget {
     return Column(
       children: [
         Text(
-          AppLocalizations.of(context)!.app_name,
+          TranslateHelper.app_name,
           textAlign: TextAlign.center,
           style: TextStyle(
             // color: ConstColor Colors.text(context),
@@ -133,7 +127,7 @@ class WelcomeAppTitle extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text(AppLocalizations.of(context)!.msg_welcome_helper_thread,
+          child: Text(TranslateHelper.msg_welcome_helper_thread,
               textAlign: TextAlign.center, style: AppTextStyle.H3_REGULAR()),
         ),
       ],

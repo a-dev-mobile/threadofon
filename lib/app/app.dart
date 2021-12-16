@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:get/get.dart';
 import 'package:threadofon/app/routes/app_pages.dart';
-import 'package:threadofon/core/constants/common.dart';
+import 'package:threadofon/lang/translation_helper.dart';
+import 'package:threadofon/lang/translation_service.dart';
 
 import 'package:threadofon/services/app_setting_services.dart';
 
@@ -13,21 +14,18 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => GetMaterialApp(
-          onGenerateTitle: (BuildContext context) =>
-              AppLocalizations.of(context)!.app_name,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
+    return Obx(() => GetMaterialApp.router(
+          onGenerateTitle: (BuildContext context) => TranslateHelper.app_name,
           debugShowCheckedModeBanner: false,
-          locale: Locale(AppSettingServices.to.langCode),
-          supportedLocales: AppLocalizations.supportedLocales,
+          locale: TranslationService.locale,
           themeMode: AppSettingServices.to.isDark.value
               ? ThemeMode.dark
               : ThemeMode.light,
-          initialRoute: AppPages.INITIAL,
           getPages: AppPages.routes,
-          fallbackLocale: const Locale(ConstDef.defCodeLocale),
+          fallbackLocale: TranslationService.fallbackLocale,
           theme: AppTheme.lightThemeData(context),
           darkTheme: AppTheme.darkThemeData(context),
+          translations: TranslationService(),
         ));
   }
 }
