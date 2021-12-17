@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:threadofon/app/routes/app_pages.dart';
 
 import 'package:threadofon/config/app_text_style.dart';
 import 'package:threadofon/core/constants/colors.dart';
@@ -16,40 +17,35 @@ class MThreadTypeView extends GetWidget<MThreadTypeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Метрическая резьба'),),
+      appBar: AppBar(
+        title: Text(TranslateHelper.m_thread_abrv),centerTitle: false,
+      ),
       body: Column(
         children: [
           Text(
-            TranslateHelper.lets_get_started,
-            style: AppTextStyle.H2(),
+            TranslateHelper.select_threads,
+            style: AppTextStyle.H3_BOLD(),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text(
-              TranslateHelper.select_threads,
-              style: AppTextStyle.H3_REGULAR(),
+          Expanded(
+              child: ChoiceTypeThread(
+            isActive: !controller.isBolt.value,
+            onTap: () {
+              controller.setNutsActive();
+              Get.rootDelegate.toNamed(Routes.M_THREAD_DIAM);
+              print('asd');
+            },
+            pathSvg: ConstAssets.svgNuts,
+            text: TranslateHelper.internal_thread,
+          )),
+          Expanded(
+            child: ChoiceTypeThread(
+              isActive: controller.isBolt.value,
+              onTap: () {
+                controller.setBoltActive();
+              },
+              pathSvg: ConstAssets.svgBolt,
+              text: TranslateHelper.external_thread,
             ),
-          ),
-          Expanded(
-            child: Obx(() => ChoiceTypeThread(
-                  isActive: !controller.isBolt.value,
-                  onTap: () {
-                    controller.setNutsActive();
-                    // MThreadController.to.pageToDiam();
-                  },
-                  pathSvg: ConstAssets.svgNuts,
-                  text: TranslateHelper.internal_thread,
-                )),
-          ),
-          Expanded(
-            child: Obx(() => ChoiceTypeThread(
-                  isActive: controller.isBolt.value,
-                  onTap: () {
-                    controller.setBoltActive();
-                  },
-                  pathSvg: ConstAssets.svgBolt,
-                  text: TranslateHelper.external_thread,
-                )),
           ),
         ],
       ),
@@ -72,22 +68,16 @@ class ChoiceTypeThread extends StatelessWidget {
   final Function() onTap;
   @override
   Widget build(BuildContext context) {
-    var brightness = Theme.of(context).brightness;
-    bool isDarkMode = brightness == Brightness.dark;
     var scaffoldBackgroundColor = Theme.of(context).scaffoldBackgroundColor;
-    var primaryColor = Theme.of(context).primaryColor;
-    var colorText = isActive
-        ? isDarkMode
-            ? ConstColor.neutral_grey_800
-            : ConstColor.neutral_white
-        : Theme.of(context).textTheme.bodyText1!.color;
+
+    var colorText = Theme.of(context).textTheme.bodyText1!.color;
     return GestureDetector(
       onTap: onTap,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         elevation: 10,
         margin: EdgeInsets.all(16.w),
-        color: isActive ? primaryColor : scaffoldBackgroundColor,
+        color: scaffoldBackgroundColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           // mainAxisSize: MainAxisSize.max,

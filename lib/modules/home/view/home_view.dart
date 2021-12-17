@@ -35,13 +35,13 @@ class HomeView extends GetView<HomeController> {
         if (currentLocation?.startsWith(Routes.SEARCH) == true) {
           currentIndex = 1;
         }
-  // if (currentLocation?.startsWith(Routes.THREADS) == true) {
-  //         currentIndex = 0;
-  //       }
+  if (currentLocation?.startsWith(Routes.THREADS) == true) {
+          currentIndex = 0;
+        }
         return Scaffold(
             body: GetRouterOutlet(
               initialRoute: Routes.THREADS,
-              // anchorRoute: Routes.HOME,
+              anchorRoute: Routes.HOME,
               key: Get.nestedKey(Routes.HOME),
             ),
             bottomNavigationBar: Container(

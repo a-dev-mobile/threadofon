@@ -11,6 +11,15 @@ class TranslateHelper {
   }
 
   static String get threads => 'threads'.tr;
+  static String get m_thread => 'm_thread'.tr;
+  static String get g_thread => 'g_thread'.tr;
+  static String get g_thread_gost => 'g_thread_gost'.tr;
+  static String get m_thread_gost => 'm_thread_gost'.tr;
+  static String get m_thread_abrv => 'm_thread_abrv'.tr;
+  static String get g_thread_abrv => 'g_thread_abrv'.tr;
+
+
+
   static String get main => 'main'.tr;
   static String get search => 'search'.tr;
   static String get favorite => 'favorite'.tr;

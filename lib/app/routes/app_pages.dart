@@ -1,19 +1,21 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:get/get.dart';
+import 'package:threadofon/modules/100_threads/bindings/threads_binding.dart';
+import 'package:threadofon/modules/100_threads/views/threads_view.dart';
 import 'package:threadofon/modules/110_m_thread_type/bindings/m_thread_type_binding.dart';
 import 'package:threadofon/modules/110_m_thread_type/view/m_thread_type_view.dart';
+import 'package:threadofon/modules/120_m_thread_diam/bindings/m_thread_diam_binding.dart';
+import 'package:threadofon/modules/120_m_thread_diam/view/m_thread_diam_view.dart';
 import 'package:threadofon/modules/favorit/bindings/favorit_binding.dart';
 import 'package:threadofon/modules/favorit/view/favorit_view.dart';
 import 'package:threadofon/modules/home/bindings/home_binding.dart';
-import 'package:threadofon/modules/home/view/home_page.dart';
+import 'package:threadofon/modules/home/view/home_view.dart';
 import 'package:threadofon/modules/root/bindings/root_binding.dart';
 import 'package:threadofon/modules/root/views/root_view.dart';
 import 'package:threadofon/modules/search/bindings/search_binding.dart';
 import 'package:threadofon/modules/search/views/search_view.dart';
 import 'package:threadofon/modules/setting/view/setting_view.dart';
-import 'package:threadofon/modules/threads/bindings/threads_binding.dart';
-import 'package:threadofon/modules/threads/views/threads_view.dart';
 
 part 'app_routes.dart';
 
@@ -40,13 +42,22 @@ class AppPages {
               children: [
                 GetPage(
                   name: _Paths.THREADS,
+            
                   page: () => const ThreadsView(),
                   binding: ThreadsBinding(),
                   children: [
                     GetPage(
                         name: _Paths.M_THREAD_TYPE,
                         page: () => const MThreadTypeView(),
-                        binding: MThreadTypeBinding())
+                        transition: Transition.rightToLeft,
+                        binding: MThreadTypeBinding(),
+                        children: [
+                          GetPage(
+                              name: _Paths.M_THREAD_DIAM,
+                              page: () => const MThreadDiamView(),
+                              transition: Transition.rightToLeft,
+                              binding: MThreadDiamBinding())
+                        ])
                   ],
                 ),
                 GetPage(
