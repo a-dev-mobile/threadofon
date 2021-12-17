@@ -27,63 +27,64 @@ class AppPages {
   static const INITIAL = Routes.HOME;
 
   static final routes = [
+    // GetPage(
+    //     name: '/',
+    //     page: () => const RootView(),
+    //     binding: RootBinding(),
+
+    //     children: [
     GetPage(
-        name: '/',
-        page: () => const RootView(),
-        binding: RootBinding(),
         participatesInRootNavigator: true,
         preventDuplicates: true,
+        name: _Paths.HOME,
+        page: () => const HomeView(),
+        bindings: [
+          HomeBinding(),
+        ],
         children: [
           GetPage(
-              preventDuplicates: true,
-              name: _Paths.HOME,
-              page: () => const HomeView(),
-              bindings: [
-                HomeBinding(),
-              ],
-              children: [
-                GetPage(
-                  name: _Paths.THREADS,
-                  page: () => const ThreadsView(),
-                  binding: ThreadsBinding(),
+            name: _Paths.THREADS,
+            page: () => const ThreadsView(),
+            binding: ThreadsBinding(),
+            children: [
+              GetPage(
+                  name: _Paths.M_THREAD_TYPE,
+                  page: () => const MThreadTypeView(),
+                  transition: Transition.rightToLeft,
+                  binding: MThreadTypeBinding(),
                   children: [
                     GetPage(
-                        name: _Paths.M_THREAD_TYPE,
-                        page: () => const MThreadTypeView(),
+                        name: _Paths.M_THREAD_DIAM,
+                        page: () => const MThreadDiamView(),
                         transition: Transition.rightToLeft,
-                        binding: MThreadTypeBinding(),
+                        binding: MThreadDiamBinding(),
                         children: [
                           GetPage(
-                              name: _Paths.M_THREAD_DIAM,
-                              page: () => const MThreadDiamView(),
+                              name: _Paths.M_THREAD_PITCH,
+                              page: () => const MThreadPitchView(),
                               transition: Transition.rightToLeft,
-                              binding: MThreadDiamBinding(),
-                              children: [
-                                GetPage(
-                                    name: _Paths.M_THREAD_PITCH,
-                                    page: () => const MThreadPitchView(),
-                                    transition: Transition.rightToLeft,
-                                    binding: MThreadPitchBinding())
-                              ])
+                              binding: MThreadPitchBinding())
                         ])
-                  ],
-                ),
-                GetPage(
-                  name: _Paths.SEARCH,
-                  page: () => SearchView(),
-                  binding: SearchBinding(),
-                ),
-                GetPage(
-                  name: _Paths.FAVORITE,
-                  page: () => const FavoritView(),
-                  binding: FavoritBinding(),
-                ),
-                GetPage(
-                  name: _Paths.SETTING,
-                  page: () => const SettingView(),
-                  // binding: SettingBinding(),
-                ),
-              ]),
-        ])
+                  ])
+            ],
+          ),
+          GetPage(
+            name: _Paths.SEARCH,
+            page: () => SearchView(),
+            binding: SearchBinding(),
+          ),
+          GetPage(
+            name: _Paths.FAVORITE,
+            page: () => const FavoritView(),
+            binding: FavoritBinding(),
+          ),
+          GetPage(
+            name: _Paths.SETTING,
+            page: () => const SettingView(),
+            // binding: SettingBinding(),
+          ),
+        ]),
+    // ]
+    // )
   ];
 }

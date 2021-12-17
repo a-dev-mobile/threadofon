@@ -23,6 +23,7 @@ class HomeView extends GetView<HomeController> {
 
     return GetRouterOutlet.builder(
       builder: (context, delegate, currentRoute) {
+        print(currentRoute?.location);
         final currentLocation = currentRoute?.location;
         var currentIndex = 0;
         if (currentLocation?.startsWith(Routes.SETTING) == true) {
@@ -59,16 +60,16 @@ class HomeView extends GetView<HomeController> {
                 onTap: (value) {
                   switch (value) {
                     case 0:
-                      delegate.toNamed(Routes.HOME);
+                      delegate.offNamed(Routes.HOME);
                       break;
                     case 1:
-                      delegate.toNamed(Routes.SEARCH);
+                      delegate.offNamed(Routes.SEARCH);
                       break;
                     case 2:
-                      delegate.toNamed(Routes.FAVORITE);
+                      delegate.offNamed(Routes.FAVORITE);
                       break;
                     case 3:
-                      delegate.toNamed(Routes.SETTING);
+                      delegate.offNamed(Routes.SETTING);
                       break;
                     default:
                   }

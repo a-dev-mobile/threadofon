@@ -5,8 +5,9 @@ import '../controllers/threads_controller.dart';
 class ThreadsBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<ThreadsController>(
-      () => ThreadsController(),
-    );
+    // Get.lazyPut<ThreadsController>(
+    //   () => ThreadsController(),
+    // );
+    Get.put(ThreadsController());
   }
 }
