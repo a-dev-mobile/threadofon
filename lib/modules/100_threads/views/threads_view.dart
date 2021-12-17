@@ -9,12 +9,14 @@ import 'package:threadofon/core/constants/colors.dart';
 import 'package:threadofon/core/constants/common.dart';
 import 'package:threadofon/lang/translation_helper.dart';
 import 'package:threadofon/modules/100_threads/controllers/threads_controller.dart';
+import 'package:threadofon/services/app_thread_services.dart';
 
 class ThreadsView extends GetView<ThreadsController> {
   const ThreadsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var glob = AppThreadService.to;
     return Scaffold(
         appBar: AppBar(
           title: Text(TranslateHelper.threads),
@@ -24,8 +26,8 @@ class ThreadsView extends GetView<ThreadsController> {
             children: [
               ChoiceThread(
                 onTap: () {
+                  glob.abrvThread = TranslateHelper.m_thread_abrv;
                   Get.rootDelegate.toNamed(Routes.M_THREAD_TYPE);
-                  // MThreadController.to.pageToDiam();
                 },
                 pathImage: ConstAssets.imageMThread,
                 title:
@@ -34,7 +36,8 @@ class ThreadsView extends GetView<ThreadsController> {
               ),
               ChoiceThread(
                 onTap: () {
-                  Get.rootDelegate.toNamed(Routes.M_THREAD_TYPE(TranslateHelper.m_thread_abrv));
+                  glob.abrvThread = TranslateHelper.g_thread_abrv;
+                  Get.rootDelegate.toNamed(Routes.M_THREAD_TYPE);
                   // MThreadController.to.pageToDiam();
                 },
                 pathImage: ConstAssets.imageGThread,
@@ -74,18 +77,16 @@ class ChoiceThread extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           elevation: 10,
-          
           margin: EdgeInsets.all(8),
           color: scaffoldBackgroundColor,
           child: Column(
- 
             // mainAxisSize: MainAxisSize.max,
- 
+
             children: [
               Container(
-                
                 height: 200.h,
                 decoration: BoxDecoration(
                     border: Border.all(

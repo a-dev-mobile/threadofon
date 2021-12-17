@@ -4,7 +4,7 @@ import 'package:threadofon/core/constants/storage.dart';
 import 'package:threadofon/core/utils/app_log.dart';
 import 'package:thredofon_repository/thredofon_repository.dart';
 
-class MThreadDiamController extends GetxController {
+class MThreadPitchController extends GetxController {
   var isLoad = true.obs;
   RxList<MDiamModel> listModel = <MDiamModel>[].obs;
   var isError = false.obs;
@@ -28,5 +28,4 @@ class MThreadDiamController extends GetxController {
     _onDiamFetched();
     super.onInit();
   }
-
 }

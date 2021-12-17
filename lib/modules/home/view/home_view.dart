@@ -35,7 +35,7 @@ class HomeView extends GetView<HomeController> {
         if (currentLocation?.startsWith(Routes.SEARCH) == true) {
           currentIndex = 1;
         }
-  if (currentLocation?.startsWith(Routes.THREADS) == true) {
+        if (currentLocation?.startsWith(Routes.THREADS) == true) {
           currentIndex = 0;
         }
         return Scaffold(
@@ -76,7 +76,8 @@ class HomeView extends GetView<HomeController> {
                 items: [
                   // _Paths.HOME + [Empty]
                   BottomNavigationBarItem(
-                      icon: const Icon(Icons.home), label: TranslateHelper.threads),
+                      icon: const Icon(Icons.home),
+                      label: TranslateHelper.threads),
 
                   // _Paths.HOME + Routes.PROFILE
                   BottomNavigationBarItem(

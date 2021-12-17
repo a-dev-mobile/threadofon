@@ -8,6 +8,7 @@ import 'package:threadofon/config/app_text_style.dart';
 import 'package:threadofon/core/constants/colors.dart';
 import 'package:threadofon/core/constants/common.dart';
 import 'package:threadofon/lang/translation_helper.dart';
+import 'package:threadofon/services/app_thread_services.dart';
 
 import '../controllers/m_thread_type_controller.dart';
 
@@ -16,9 +17,11 @@ class MThreadTypeView extends GetWidget<MThreadTypeController> {
 
   @override
   Widget build(BuildContext context) {
+    var glob = AppThreadService.to;
     return Scaffold(
       appBar: AppBar(
-        title: Text(TranslateHelper.m_thread_abrv),centerTitle: false,
+        title: Text(glob.abrvThread),
+        centerTitle: false,
       ),
       body: Column(
         children: [
@@ -28,20 +31,20 @@ class MThreadTypeView extends GetWidget<MThreadTypeController> {
           ),
           Expanded(
               child: ChoiceTypeThread(
-            isActive: !controller.isBolt.value,
             onTap: () {
-              controller.setNutsActive();
-              Get.rootDelegate.toNamed(Routes.M_THREAD_DIAM);
-              print('asd');
+              glob.isExternalThread = false;
+              glob.svgThread = ConstAssets.svgNuts;
+              toNext();
             },
             pathSvg: ConstAssets.svgNuts,
             text: TranslateHelper.internal_thread,
           )),
           Expanded(
             child: ChoiceTypeThread(
-              isActive: controller.isBolt.value,
               onTap: () {
-                controller.setBoltActive();
+                glob.isExternalThread = true;
+                glob.svgThread = ConstAssets.svgBolt;
+                toNext();
               },
               pathSvg: ConstAssets.svgBolt,
               text: TranslateHelper.external_thread,
@@ -51,18 +54,20 @@ class MThreadTypeView extends GetWidget<MThreadTypeController> {
       ),
     );
   }
+
+  void toNext() {
+    Get.rootDelegate.toNamed(Routes.M_THREAD_DIAM);
+  }
 }
 
 class ChoiceTypeThread extends StatelessWidget {
   const ChoiceTypeThread({
     Key? key,
-    this.isActive = false,
     required this.pathSvg,
     required this.text,
     required this.onTap,
   }) : super(key: key);
 
-  final bool isActive;
   final String pathSvg;
   final String text;
   final Function() onTap;
@@ -80,7 +85,6 @@ class ChoiceTypeThread extends StatelessWidget {
         color: scaffoldBackgroundColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          // mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SvgPicture.asset(

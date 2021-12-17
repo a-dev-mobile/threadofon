@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:threadofon/services/app_setting_services.dart';
+import 'package:threadofon/services/app_thread_services.dart';
 import 'package:threadofon/services/db_services.dart';
 
 import 'app/app.dart';
@@ -13,6 +14,7 @@ void main() async {
 
   await GetStorage.init();
   await Get.putAsync(() => AppSettingServices().init());
+  await Get.putAsync(() => AppThreadService().init());
   await Get.putAsync(() => DbServices().init());
   await SystemChrome.setPreferredOrientations(
       <DeviceOrientation>[DeviceOrientation.portraitUp]);
