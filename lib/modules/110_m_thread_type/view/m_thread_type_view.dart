@@ -8,49 +8,51 @@ import 'package:threadofon/core/constants/colors.dart';
 import 'package:threadofon/core/constants/common.dart';
 import 'package:threadofon/lang/translation_helper.dart';
 
+import '../controllers/m_thread_type_controller.dart';
 
-import 'm_type_controller.dart';
-
-class MTypeWidget extends GetView<MTypeController> {
-  const MTypeWidget({Key? key}) : super(key: key);
+class MThreadTypeView extends GetWidget<MThreadTypeController> {
+  const MThreadTypeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          TranslateHelper.lets_get_started,
-          style: AppTextStyle.H2(),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: Text(
-            TranslateHelper.select_type_thread,
-            style: AppTextStyle.H3_REGULAR(),
+    return Scaffold(
+      appBar: AppBar(title: Text('Метрическая резьба'),),
+      body: Column(
+        children: [
+          Text(
+            TranslateHelper.lets_get_started,
+            style: AppTextStyle.H2(),
           ),
-        ),
-        Expanded(
-          child: Obx(() => ChoiceTypeThread(
-                isActive: !controller.isBolt.value,
-                onTap: () {
-                  controller.setNutsActive();
-                  // MThreadController.to.pageToDiam();
-                },
-                pathSvg: ConstAssets.svgNuts,
-                text: TranslateHelper.internal_thread,
-              )),
-        ),
-        Expanded(
-          child: Obx(() => ChoiceTypeThread(
-                isActive: controller.isBolt.value,
-                onTap: () {
-                  controller.setBoltActive();
-                },
-                pathSvg: ConstAssets.svgBolt,
-                text: TranslateHelper.external_thread,
-              )),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text(
+              TranslateHelper.select_threads,
+              style: AppTextStyle.H3_REGULAR(),
+            ),
+          ),
+          Expanded(
+            child: Obx(() => ChoiceTypeThread(
+                  isActive: !controller.isBolt.value,
+                  onTap: () {
+                    controller.setNutsActive();
+                    // MThreadController.to.pageToDiam();
+                  },
+                  pathSvg: ConstAssets.svgNuts,
+                  text: TranslateHelper.internal_thread,
+                )),
+          ),
+          Expanded(
+            child: Obx(() => ChoiceTypeThread(
+                  isActive: controller.isBolt.value,
+                  onTap: () {
+                    controller.setBoltActive();
+                  },
+                  pathSvg: ConstAssets.svgBolt,
+                  text: TranslateHelper.external_thread,
+                )),
+          ),
+        ],
+      ),
     );
   }
 }

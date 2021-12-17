@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
-class TypeThreadController extends GetxController {
+class ThreadsController extends GetxController {
   final now = DateTime.now().obs;
   @override
   void onReady() {

@@ -10,12 +10,13 @@ class TranslateHelper {
     Get.updateLocale(locale);
   }
 
+  static String get threads => 'threads'.tr;
   static String get main => 'main'.tr;
   static String get search => 'search'.tr;
   static String get favorite => 'favorite'.tr;
   static String get setting => 'setting'.tr;
   static String get lets_get_started => 'lets_get_started'.tr;
-  static String get select_type_thread => 'select_type_thread'.tr;
+  static String get select_threads => 'select_threads'.tr;
   static String get internal_thread => 'internal_thread'.tr;
   static String get external_thread => 'external_thread'.tr;
   static String get msg_welcome_setting_first_launch =>

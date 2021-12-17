@@ -52,6 +52,7 @@ flutter:
     - assets/splash/
     - assets/images/
     - assets/illustrators/
+    - assets/images/type_thread/
  
   fonts:
     - family: montserrat

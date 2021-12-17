@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:threadofon/core/constants/storage.dart';
 
-class MTypeController extends GetxController {
+class MThreadTypeController extends GetxController {
   var isBolt = false.obs;
 
   void setBoltActive() {

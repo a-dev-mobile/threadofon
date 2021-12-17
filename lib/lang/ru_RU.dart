@@ -1,4 +1,3 @@
-
 // ignore_for_file: constant_identifier_names, file_names
 
 const Map<String, String> ru_RU = {
@@ -13,6 +12,7 @@ const Map<String, String> ru_RU = {
   "dark_theme": "Темная тема",
   "generalError": "Упс, Что то случилось!\nПопробуйте еще раз",
   "launch": "Запуск",
-   "msg_welcome_helper_thread": "Ваш помошник в мире резьб",
-   "msg_welcome_setting_first_launch": "Настройки первого запуска"
+  "msg_welcome_helper_thread": "Ваш помошник в мире резьб",
+  "msg_welcome_setting_first_launch": "Настройки первого запуска",
+
 };
